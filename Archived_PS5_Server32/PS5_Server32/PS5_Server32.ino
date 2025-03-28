@@ -34,11 +34,11 @@
                      // you must select a partition scheme labeled with "FAT" or "FATFS" with this enabled.
 
                      // use LITTLEFS not SPIFFS [ true / false ]
-#define USELFS false // LITTLEFS will be used instead of SPIFFS for the storage filesystem.
+#define USELFS true // LITTLEFS will be used instead of SPIFFS for the storage filesystem.
                      // you must select a partition scheme labeled with "SPIFFS" with this enabled and USEFAT must be false.
 
                      // enable internal etahen.h [ true / false ]
-#define INTHEN true  // etahen is placed in the app partition to free up space on the storage for other payloads.
+#define INTHEN false  // etahen is placed in the app partition to free up space on the storage for other payloads.
                      // with this enabled you do not upload etahen to the board, set this to false if you wish to upload etahen.
 
                       // enable autohen [ true / false ]
@@ -792,14 +792,141 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-  if (path.endsWith("/jzip.js"))
+  // if (path.endsWith("/jzip.js"))
+  // {
+  //   res->setHeader("Content-Type", dataType.c_str());
+  //   res->setHeader("Content-Encoding", "gzip");
+  //   res->write(jzip_gz, sizeof(jzip_gz));
+  //   return;
+  // }
+
+  if (path.endsWith("/1.00.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
-    res->write(jzip_gz, sizeof(jzip_gz));
+    res->write(o1_00_gz, sizeof(o1_00_gz));
     return;
   }
 
+  if (path.endsWith("/1.01.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_01_gz, sizeof(o1_01_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.02.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_02_gz, sizeof(o1_02_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.05.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_05_gz, sizeof(o1_05_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.10.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_10_gz, sizeof(o1_10_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.11.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_11_gz, sizeof(o1_11_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.12.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_12_gz, sizeof(o1_12_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.13.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_13_gz, sizeof(o1_13_gz));
+    return;
+  }
+
+  if (path.endsWith("/1.14.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o1_14_gz, sizeof(o1_14_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.00.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_00_gz, sizeof(o2_00_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.20.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_20_gz, sizeof(o2_20_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.25.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_25_gz, sizeof(o2_25_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.26.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_26_gz, sizeof(o2_26_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.30.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_30_gz, sizeof(o2_30_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.50.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_50_gz, sizeof(o2_50_gz));
+    return;
+  }
+
+  if (path.endsWith("/2.70.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o2_70_gz, sizeof(o2_70_gz));
+    return;
+  }
 
   if (path.endsWith("/3.00.js"))
   {
@@ -817,7 +944,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/3.20.js"))
+  if (path.endsWith("/3.20.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -825,7 +952,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/3.21.js"))
+  if (path.endsWith("/3.21.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -833,7 +960,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/4.00.js"))
+  if (path.endsWith("/4.00.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -841,7 +968,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/4.02.js"))
+  if (path.endsWith("/4.02.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -849,7 +976,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/4.03.js"))
+  if (path.endsWith("/4.03.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -857,7 +984,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/4.50.js"))
+  if (path.endsWith("/4.50.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -865,7 +992,7 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-    if (path.endsWith("/4.51.js"))
+  if (path.endsWith("/4.51.js"))
   {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
@@ -873,127 +1000,180 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     return;
   }
 
-  if (path.endsWith("/module/int64.js"))
+  if (path.endsWith("/5.00.js"))
   {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o5_00_gz, sizeof(o5_00_gz));
+    return;
+  }
+
+  if (path.endsWith("/5.02.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o5_02_gz, sizeof(o5_02_gz));
+    return;
+  }
+
+  if (path.endsWith("/5.10.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o5_10_gz, sizeof(o5_10_gz));
+    return;
+  }
+
+  if (path.endsWith("/5.50.js"))
+  {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(o5_50_gz, sizeof(o5_50_gz));
+    return;
+  }
+
+  if (path.endsWith("/psfree/alert.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(alert_gz, sizeof(alert_gz));
+    return;
+  }
+
+  if (path.endsWith("/psfree/config.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(config_gz, sizeof(config_gz));
+    return;
+  }
+
+  if (path.endsWith("/psfree/psfree.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(psfreeo_gz, sizeof(psfreeo_gz));
+    return;
+  }
+  if (path.endsWith("/psfree/module/int64.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(int64m_gz, sizeof(int64m_gz));
     return;
   }
-
-  if (path.endsWith("/module/utils.js"))
-  {
+  if (path.endsWith("/psfree/module/offset.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(offset_gz, sizeof(offset_gz));
+    return;
+  }
+  if (path.endsWith("/psfree/module/utils.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(utils_gz, sizeof(utils_gz));
     return;
   }
 
-  if (path.endsWith("/module/constants.js"))
-  {
+  if (path.endsWith("/psfree/module/chain.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
-    res->write(constants_gz, sizeof(constants_gz));
+    res->write(chain_gz, sizeof(chain_gz));
     return;
   }
 
-  if (path.endsWith("/module/mem.js"))
-  {
+  if (path.endsWith("/psfree/module/mem.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(mem_gz, sizeof(mem_gz));
     return;
   }
 
-  if (path.endsWith("/module/memtools.js"))
-  {
+  if (path.endsWith("/psfree/module/memtools.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(memtools_gz, sizeof(memtools_gz));
     return;
   }
 
-  if (path.endsWith("/module/rw.js"))
-  {
+  if (path.endsWith("/psfree/module/rw.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(rw_gz, sizeof(rw_gz));
     return;
   }
 
-  if (path.endsWith("/custom_host_stuff.js"))
-  {
+  if (path.endsWith("/custom_host_stuff.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(custom_host_stuff_gz, sizeof(custom_host_stuff_gz));
     return;
   }
 
-  if (path.endsWith("/exploit.js"))
-  {
-    res->setHeader("Content-Type", dataType.c_str());
-    res->setHeader("Content-Encoding", "gzip");
-    res->write(exploit_gz, sizeof(exploit_gz));
-    return;
-  }
-
-  if (path.endsWith("/int64.js"))
-  {
+  if (path.endsWith("/int64.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(int64_gz, sizeof(int64_gz));
     return;
   }
 
-  if (path.endsWith("/main.css"))
-  {
+  if (path.endsWith("/main.css")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(main_gz, sizeof(main_gz));
     return;
   }
 
-  if (path.endsWith("/rop.js"))
-  {
+  if (path.endsWith("/main.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(mainj_gz, sizeof(mainj_gz));
+    return;
+  }
+
+  if (path.endsWith("/rop.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(rop_gz, sizeof(rop_gz));
     return;
   }
 
-  if (path.endsWith("/rop_slave.js"))
-  {
+  if (path.endsWith("/rop_slave.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
     res->write(rop_slave_gz, sizeof(rop_slave_gz));
     return;
   }
 
-  if (path.endsWith("/webkit_psfree.js"))
-  {
+  if (path.endsWith("/syscalls.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
-    res->write(webkit_psfree_gz, sizeof(webkit_psfree_gz));
+    res->write(syscalls_gz, sizeof(syscalls_gz));
     return;
   }
 
-
-  if (path.endsWith("/webkit_fontface.js"))
-  {
+  if (path.endsWith("/umtx2.js")) {
     res->setHeader("Content-Type", dataType.c_str());
     res->setHeader("Content-Encoding", "gzip");
-    res->write(webkit_fontface_gz, sizeof(webkit_fontface_gz));
+    res->write(umtx2_gz, sizeof(umtx2_gz));
     return;
   }
 
-  
-  
-  if (path.endsWith("/payload_map.js"))
-  {
-    handlePayloads(req, res);
+  if (path.endsWith("/payloads/elfldr.elf")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(elfldr_gz, sizeof(elfldr_gz));
     return;
   }
 
+  if (path.endsWith("/payload_map.js")) {
+    res->setHeader("Content-Type", dataType.c_str());
+    res->setHeader("Content-Encoding", "gzip");
+    res->write(payload_map_gz, sizeof(payload_map_gz));
+    return;
+  }
+
+  // if (path.endsWith("/payload_map.js"))
+  // {
+  //   handlePayloads(req, res);
+  //   return;
+  // }
 
   if (path.endsWith("/info.html"))
   {
@@ -1064,14 +1244,13 @@ void handleHTTP(HTTPRequest *req, HTTPResponse *res)
     if(isGzip){
       res->setHeader("Content-Encoding", "gzip");
     }
-    uint8_t buf[256];
+
+    uint8_t buf[1024];  // Increase buffer size to 1024 bytes
     while (dataFile.available())
     {
       int n = dataFile.read(buf, sizeof(buf));
-      for (int i = 0; i < n; i++)
-      {
-        res->write(buf[i]);
-      }
+      res->write(buf, n);  // Write chunk data
+      delay(1);  // Yield to the watchdog to prevent resets
     }
     dataFile.close();
   }
